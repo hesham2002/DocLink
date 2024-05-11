@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'firebase_options.dart';
 import 'screens/hospital_part/hospital_screen.dart';
 import 'screens/profilePatien.dart';
+import 'screens/splash_screen.dart';
 import 'screens/transform_screen.dart';
 
 Future<void> main() async {
@@ -40,7 +41,8 @@ class MyApp extends StatelessWidget {
         "RegisterScreen": (context) => PatientRegisterScreen(),
         "TransformScreen": (context) => TransformScreen(),
         "SearchScreen": (context) => SearchScreen(),
-        "SplashScreen": (context) => ProfilePage(),
+        "profile patient": (context) => ProfilePage(),
+        "SplashScreen": (context) => SplashScreen(),
       },
     );
   }
