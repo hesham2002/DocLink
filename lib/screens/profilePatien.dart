@@ -1,4 +1,5 @@
 import 'package:doclink_project/models/user.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../widgets/appbar_widget.dart';
@@ -15,6 +16,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
+    var UserPreferences;
     final user = UserPreferences.myUser;
 
     return Scaffold(
@@ -75,4 +77,19 @@ class _ProfilePageState extends State<ProfilePage> {
           ],
         ),
       );
+}
+
+mixin about {
+}
+
+mixin about {
+}
+
+mixin about {
+}
+
+mixin name {
+}
+
+mixin name {
 }
