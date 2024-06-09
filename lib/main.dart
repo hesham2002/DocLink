@@ -9,7 +9,9 @@ import 'package:doclink_project/screens/hospital_part/hospital_screen.dart';
 import 'package:doclink_project/screens/intro_screen.dart';
 import 'package:doclink_project/screens/receive_screen.dart';
 import 'package:doclink_project/screens/search_part/medical_search_screen.dart';
+// ignore: unused_import
 import 'package:doclink_project/screens/splash_screen.dart';
+// ignore: unused_import
 import 'package:doclink_project/screens/transform_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +42,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(useMaterial3: false),
-        home: SplashScreen(),
+        home:SplashScreen(),
+        // MedicalLoginScreen(),
 
       ),
     );

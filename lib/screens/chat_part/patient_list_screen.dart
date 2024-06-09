@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'chat_part/chat_screen.dart';
+import 'chat_screen.dart';
 
 class PatientListScreen extends StatelessWidget {
   @override
@@ -8,8 +8,9 @@ class PatientListScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Patients'),
-        backgroundColor: Colors.teal,
+        centerTitle: true,
+        title: Text('Chats'),
+        backgroundColor:  Color.fromARGB(255, 30, 30, 84),
       ),
       body: ListView.builder(
         itemCount: patients.length,
@@ -41,7 +42,7 @@ class PatientListScreen extends StatelessWidget {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.teal,
+                      color:  Color.fromARGB(255, 30, 30, 84),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     padding: EdgeInsets.all(12),

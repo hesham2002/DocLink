@@ -7,8 +7,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../transform_screen.dart';
 
 class DoctorProfileScreen extends StatefulWidget {
-  DoctorProfileScreen({required this.doctor});
-  Doctor doctor;
+
   @override
   State<DoctorProfileScreen> createState() => _DoctorProfileScreenState();
 }

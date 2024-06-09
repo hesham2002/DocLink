@@ -63,137 +63,136 @@ class _HospitalHomePageState extends State<HospitalHomePage> {
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Welcome to Our Hospital',
-                style: TextStyle(
-                  fontSize: _fontSize + 8.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Welcome to Our Hospital',
+              style: TextStyle(
+                fontSize: _fontSize + 8.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
               ),
-              SizedBox(height: 16.0),
-              Text(
-                widget.hospital.descriptionAboutHospital,
-                style: TextStyle(
-                  fontSize: _fontSize,
-                  color: Colors.white,
-                ),
-                maxLines: 3, // Limiting to 3 lines
-                overflow: TextOverflow.ellipsis, // Show ellipsis when text overflows
+            ),
+            SizedBox(height: 16.0),
+            Text(
+              widget.hospital.descriptionAboutHospital,
+              style: TextStyle(
+                fontSize: _fontSize,
+                color: Colors.white,
               ),
-              SizedBox(height: 24.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _buildServiceCard(
-                    icon: Icons.local_pharmacy,
-                    title: 'Departments',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DepartmentsScreen(
-                            hospital: widget.hospital,
-                          ),
+              maxLines: 3, // Limiting to 3 lines
+              overflow: TextOverflow.ellipsis, // Show ellipsis when text overflows
+            ),
+            SizedBox(height: 24.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _buildServiceCard(
+                  icon: Icons.local_pharmacy,
+                  title: 'Departments',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DepartmentsScreen(
+                          hospital: widget.hospital,
                         ),
-                      );
-                    },
-                  ),
-                  _buildServiceCard(
-                    icon: Icons.person,
-                    title: 'Our Doctors',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DoctorsScreen(hospital: widget.hospital),
-                        ),
-                      );
-                    },
-                  ),
-                  _buildServiceCard(
-                    icon: Icons.local_hospital,
-                    title: 'Clinics',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              ClinicScreen(hospital: widget.hospital),
-                        ),
-                      );
-                    },
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 36,
-              ),
-              Container(
-                height: MediaQuery.of(context).size.height*.22,
-                child: Image.network(
-                  'https://mediaaws.almasryalyoum.com/news/large/2022/07/19/1850392_0.jpg',
-                  width: double.infinity,
-                  height: 200,
-                  fit: BoxFit.cover,
+                      ),
+                    );
+                  },
                 ),
+                _buildServiceCard(
+                  icon: Icons.person,
+                  title: 'Our Doctors',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DoctorsScreen(hospital: widget.hospital),
+                      ),
+                    );
+                  },
+                ),
+                _buildServiceCard(
+                  icon: Icons.local_hospital,
+                  title: 'Clinics',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            ClinicScreen(hospital: widget.hospital),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 36,
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height*.23,
+              child: Image.network(
+                widget.hospital.hospitalImg.toString(),
+                width: double.infinity,
+                height: 200,
+                fit: BoxFit.cover,
+
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  CircleAvatar(
-                    child: Icon(
-                      Icons.location_on,
-                      color: Colors.white,
-                      size: 30,
-                    ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                CircleAvatar(
+                  child: Icon(
+                    Icons.location_on,
+                    color: Colors.white,
+                    size: 30,
                   ),
-                  SizedBox(
-                    width: 20,
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  '${widget.hospital.locationDetails.street}, ${widget.hospital.locationDetails.city}, ${widget.hospital.locationDetails.country}',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: _fontSize,
+                    fontWeight: FontWeight.bold,
                   ),
-                  Text(
-                    '${widget.hospital.locationDetails.street}, ${widget.hospital.locationDetails.city}, ${widget.hospital.locationDetails.country}',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: _fontSize,
-                      fontWeight: FontWeight.bold,
-                    ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                CircleAvatar(
+                  child: Icon(
+                    Icons.phone,
+                    color: Colors.green,
+                    size: 30,
                   ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  CircleAvatar(
-                    child: Icon(
-                      Icons.phone,
-                      color: Colors.green,
-                      size: 30,
-                    ),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  widget.hospital.phone,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: _fontSize,
+                    fontWeight: FontWeight.bold,
                   ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
-                    widget.hospital.phone,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: _fontSize,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: CurvedNavigationBar(

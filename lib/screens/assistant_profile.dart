@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../helper/assistant_provider.dart';
-import 'patient_list_screen.dart';
+import 'chat_part/patient_list_screen.dart';
 
 class AssistantProfilePage extends StatefulWidget {
   @override
